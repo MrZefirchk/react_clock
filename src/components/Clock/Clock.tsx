@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-
 import React from 'react';
 
 type Props = {
@@ -23,12 +21,14 @@ export class Clock extends React.PureComponent<Props, State> {
 
       this.setState({ time: currentTime });
 
+      // eslint-disable-next-line no-console
       console.log(currentTime.toUTCString().slice(-12, -4));
     }, 1000);
   }
 
   componentDidUpdate(prevProps: Readonly<Props>): void {
     if (prevProps.name !== this.props.name) {
+      // eslint-disable-next-line no-console
       console.warn(`Renamed from ${prevProps.name} to ${this.props.name}`);
     }
   }
